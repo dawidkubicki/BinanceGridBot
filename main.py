@@ -1,9 +1,6 @@
 import keys.keys as keys
 from time_operators.time_operator import TimeOperator
-from bots.ta_bots.ema_crossover import EMACrossoverBOT
-# from bots.bot import Bot
-from bots.grid.spot_grid import StaticGridBot
-from config.title import TITLE
+from bots.spot_grid import StaticGridBot
 from config.intervals import INTERVALS
 import os
 
@@ -23,17 +20,17 @@ fee = 0.1
 bot = StaticGridBot(key=keys.testnet_api_key,
                     secret=keys.testnet_secret_key,
                     use_testnet=True,
-                    base_symbol="btc",
+                    base_symbol="eth",
                     quote_symbol="usdt",
-                    units=0.001,
+                    units=0.01,
                     fee=fee,
-                    upper_price=30000.00,
-                    lower_price=24000.00,
+                    upper_price=1380.00,
+                    lower_price=1280.00,
                     num_grids=8,
                     stop_loss_active=True,
-                    stop_loss=25000.00,
+                    stop_loss=1250.00,
                     take_profit_active=True,
-                    take_profit=30000.0,
+                    take_profit=1450.0,
                     sale_base_asset=False,
                     )
 
